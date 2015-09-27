@@ -1,0 +1,44 @@
+{
+    "name" : "Wechat-message",
+
+
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "background" : {
+        "persistent": false,
+        "scripts": ["background.js"]
+    },
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+
+    "icons" : {
+        "48" : "image/logo.png",
+        "128": "image/logo.png"
+    },
+
+    "devtools_page": "devtool/index.html",
+
+//    "browser_action": {
+//        "default_icon": "image/logo.png",
+//        "default_title": "Do action",
+//        "default_popup": "popup.html"
+//    },
+
+    "content_scripts": [
+        {
+            "matches": ["https://wx2.qq.com/*", "http://130.211.186.174/admin/*"],
+            "css": [],
+            "js": [
+                //"bower_components/jquery/dist/jquery.js",
+                "content.js"
+            ]
+        }
+    ],
+
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+
+
+}
